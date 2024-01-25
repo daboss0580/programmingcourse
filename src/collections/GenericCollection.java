@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class GenericCollection {
     public static void main(String[] args) {
-        LinkedList<String> linkedList=new LinkedList<String>();
+        LinkedList<String> linkedList=new LinkedList<>();
         //linkedList.add(10);
         linkedList.add("xxx");
         linkedList.add("yyy");
