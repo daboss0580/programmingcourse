@@ -1,4 +1,4 @@
-package thread;
+package threads;
 class Thread3 implements Runnable{
     @Override
     public void run() {
