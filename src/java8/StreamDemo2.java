@@ -2,6 +2,7 @@ package java8;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 class Product{
     int productID;
@@ -21,8 +22,17 @@ public class StreamDemo2 {
         List<Product>newList=new ArrayList<>();
         for (Product product:getProducts()) {
             if (product.price>100)
-                System.out.println(product);
+                newList.add(product);
         }
+        newList.forEach(System.out::println);
+        System.out.println("------------------------------");
+        //Using stream API to improve performance of the software
+        List<Product>newList1=getProducts().stream().filter((product) -> product.price>100).collect(Collectors.toList());
+        newList1.forEach(System.out::println);
+        System.out.println("------------------------------");
+        List<Product>newList2=getProducts().stream().filter((product) -> product.price>100).toList();
+        newList2.forEach(System.out::println);
+        System.out.println("------------------------------");
     }
     private static List<Product>getProducts(){
         List<Product>productList=new ArrayList<>();
